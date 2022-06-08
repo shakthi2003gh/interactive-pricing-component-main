@@ -102,6 +102,7 @@ div.pageviews {
 
 .range {
   position: relative;
+  --value-range: 50%;
 }
 
 input[type="range"] {
@@ -110,28 +111,34 @@ input[type="range"] {
   width: 100%;
   height: 7px;
   border-radius: 100px;
+  outline: none;
   background-color: var(--color-empyt-slider);
 }
 
-.range::after {
+.range::before {
   position: absolute;
   top: 40%;
   left: 0;
   content: "";
-  width: 50%;
+  width: var(--value-range);
   height: 7px;
   border-radius: 100px;
   background-color: var(--color-slider);
+  z-index: 1;
 }
 
 input[type="range"]::-webkit-slider-thumb {
+  position: relative;
   -webkit-appearance: none;
+  width: 45px;
+  height: 45px;
+  z-index: 414;
 }
 
 .thumb {
   position: absolute;
   top: -1px;
-  left: 50%;
+  left: var(--value-range);
   transform: translate(-50%, -11px);
 
   width: 45px;
@@ -140,7 +147,8 @@ input[type="range"]::-webkit-slider-thumb {
   background: url(/images/icon-slider.svg), var(--bg-slider);
   background-repeat: no-repeat;
   background-position: center;
-  z-index: 5;
+  z-index: 12;
+  user-select: none;
 }
 
 .subscription {
@@ -250,11 +258,11 @@ button {
 
 .toggle,
 button,
-.thumb {
+input[type="range"]::-webkit-slider-thumb {
   cursor: pointer;
 }
 
-.thumb:active {
+input[type="range"]::-webkit-slider-thumb:active {
   cursor: grab;
 }
 
