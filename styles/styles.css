@@ -16,7 +16,7 @@ body {
   min-height: 100vh;
   background: url(/images/pattern-circles.svg), url(/images/bg-pattern.svg);
   background-repeat: no-repeat;
-  background-size: 200px, auto;
+  background-size: 150px, auto;
   background-position: center 50px, 0 0;
 }
 
@@ -41,10 +41,27 @@ body {
 body {
   font-family: "Manrope", sans-serif;
   font-size: 1.5rem;
+  color: var(--color-text);
 }
 
 h1 {
   font-size: 2.2rem;
-  text-align: center;
   color: var(--color-and-bg);
+}
+
+p {
+  width: 200px;
+  margin: 15px auto;
+}
+
+@media screen and (min-width: 500px) {
+  p {
+    width: max-content;
+  }
+}
+
+/* >title section */
+.title {
+  text-align: center;
+  margin: 9rem auto 7rem;
 }
