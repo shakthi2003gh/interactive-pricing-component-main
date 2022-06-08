@@ -1,4 +1,5 @@
 @import url(/styles/normalize.css);
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
 
 *,
 *::after,
@@ -9,4 +10,41 @@
 html {
   font-size: 62.5%;
   min-width: 375px;
+}
+
+body {
+  min-height: 100vh;
+  background: url(/images/pattern-circles.svg), url(/images/bg-pattern.svg);
+  background-repeat: no-repeat;
+  background-size: 200px, auto;
+  background-position: center 50px, 0 0;
+}
+
+/* >Color palette */
+:root {
+  --color-CTA: hsl(226, 100%, 87%);
+  --color-text: hsl(225, 20%, 60%);
+  --color-discount: hsl(15, 100%, 70%);
+  --color-slider: hsl(174, 77%, 80%);
+  --color-empyt-slider: hsl(224, 65%, 95%);
+
+  --color-and-bg: hsl(227, 35%, 25%);
+
+  --bg-main: hsl(230, 100%, 99%);
+  --bg-slider: hsl(174, 86%, 45%);
+  --bg-toggle: hsl(223, 50%, 87%);
+  --bg-discount: hsl(14, 92%, 95%);
+  --bg-price-component: hsl(0, 0%, 100%);
+}
+
+/* >Typography */
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.5rem;
+}
+
+h1 {
+  font-size: 2.2rem;
+  text-align: center;
+  color: var(--color-and-bg);
 }
