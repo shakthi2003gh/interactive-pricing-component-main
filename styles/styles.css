@@ -44,7 +44,8 @@ body {
   color: var(--color-text);
 }
 
-h1 {
+h1,
+output.subscription {
   font-size: 2.2rem;
   color: var(--color-and-bg);
 }
@@ -54,14 +55,251 @@ p {
   margin: 15px auto;
 }
 
+output.subscription {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
 @media screen and (min-width: 500px) {
   p {
     width: max-content;
   }
 }
 
+/* >main */
+main {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
 /* >title section */
 .title {
   text-align: center;
   margin: 9rem auto 7rem;
+}
+
+/* >pricing section */
+.pricing {
+  display: grid;
+  gap: 3rem;
+  text-align: center;
+  padding: 3rem;
+  margin: 0 2rem 10rem;
+  box-shadow: 0px 18px 50px -23px rgb(0 0 0 / 37%);
+  border-radius: 10px;
+  background-color: var(--bg-price-component);
+}
+
+.pricing > div:first-child {
+  display: grid;
+  gap: 3rem;
+}
+
+div.pageviews {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.range {
+  position: relative;
+}
+
+input[type="range"] {
+  position: relative;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 7px;
+  border-radius: 100px;
+  background-color: var(--color-empyt-slider);
+}
+
+.range::after {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  content: "";
+  width: 50%;
+  height: 7px;
+  border-radius: 100px;
+  background-color: var(--color-slider);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+.thumb {
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translate(-50%, -11px);
+
+  width: 45px;
+  height: 45px;
+  border-radius: 100px;
+  background: url(/images/icon-slider.svg), var(--bg-slider);
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 5;
+}
+
+.subscription {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.billing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+  font-size: 1.2rem;
+}
+
+input#toggle {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 25px;
+  border-radius: 100px;
+  background-color: var(--bg-toggle);
+}
+
+.toggle::after {
+  position: absolute;
+  inset: 5px;
+  right: auto;
+  content: "";
+  width: 100%;
+  max-width: 15px;
+  height: 15px;
+  border-radius: 100px;
+  background-color: var(--bg-price-component);
+}
+
+input:checked + .toggle {
+  background-color: var(--bg-slider);
+}
+
+input:checked + .toggle::after {
+  left: auto;
+  right: 5px;
+}
+
+.discount {
+  padding: 0.3rem 1rem;
+  border-radius: 100px;
+  color: var(--color-discount);
+  background-color: var(--bg-discount);
+}
+
+.hide {
+  display: none;
+}
+
+.footer {
+  position: relative;
+  display: grid;
+  gap: 3rem;
+}
+
+.footer::before {
+  position: absolute;
+  top: -2rem;
+  left: -30px;
+  content: "";
+  width: calc(100% + 60px);
+  height: 0;
+  border: 1px solid transparent;
+  border-top: 1px solid var(--bg-toggle);
+}
+
+.feature {
+  display: grid;
+  gap: 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+li span {
+  position: relative;
+}
+
+li span:before {
+  position: absolute;
+  left: -2.2rem;
+  content: url(/images/icon-check.svg);
+}
+
+button {
+  width: max-content;
+  padding: 1.5rem 4.5rem;
+  margin: 0 auto;
+  border: none;
+  border-radius: 100px;
+  color: var(--color-CTA);
+  background-color: var(--color-and-bg);
+}
+
+.toggle,
+button,
+.thumb {
+  cursor: pointer;
+}
+
+.thumb:active {
+  cursor: grab;
+}
+
+@media screen and (min-width: 500px) {
+  .pricing > div:first-child {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  div.pageviews {
+    place-self: center left;
+  }
+
+  .range {
+    order: 2;
+    grid-column: span 2;
+  }
+
+  .subscription {
+    place-self: center right;
+  }
+
+  .hide {
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .feature,
+  button {
+    flex-grow: 1;
+  }
+
+  .feature {
+    text-align: left;
+    padding-left: 2.3rem;
+  }
+
+  button {
+    max-width: fit-content;
+    padding-left: 5.5rem;
+    padding-right: 5.5rem;
+  }
 }

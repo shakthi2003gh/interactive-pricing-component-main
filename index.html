@@ -24,24 +24,42 @@
       </div>
 
       <div class="pricing">
-        Pageviews 
-        <input type="range">
-
-        <div class="subscription">
-          $ /month
-        </div>
-
         <div>
-          Monthly Billing <span class="toggle"></span> Yearly Billing 25% discount
+          <div class="pageviews">
+            <output class="pageviews">100k</output> Pageviews
+          </div>
+
+          <div class="range">
+            <input type="range" min="0", max="200" value="100">
+            <div class="thumb"></div>
+          </div>
+
+          <div class="subscription">
+            <output class="subscription">$16.00</output> /month
+          </div>
         </div>
 
-        <ol class="feature">
-          <li>Unlimited websites</li>
-          <li>100% data ownership</li>
-          <li>Email reports</li>
-        </ol>
+        <div class="billing">
+          Monthly Billing 
+            <label for="toggle">
+              <input type="checkbox" id="toggle">
+              <span class="toggle"></span>
+            </label>
 
-        <button>Start my trial</button>
+             Yearly Billing 
+             <span class="discount">-25% 
+               <span class="hide">discount</span>
+              </span> 
+        </div>
+
+        <div class="footer">
+          <ol class="feature">
+            <li><span>Unlimited websites</span></li>
+            <li><span>100% data ownership</span></li>
+            <li><span>Email reports</span></li>
+          </ol>
+          <button>Start my trial</button>
+        </div>
       </div>
     </main>
 </html>
